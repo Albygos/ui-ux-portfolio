@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Search Console - Overview</title>
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <!-- Local Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- --- TOP HEADER --- -->
+  <header class="header">
+    <div class="header-left">
+      <button class="menu-btn" id="menuToggle" aria-label="Toggle Navigation Drawer">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <div class="logo-container" id="logoReload">
+        <img class="logo-img" src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google">
+        <span class="logo-text"><span class="logo-word-google">Search</span> Console</span>
+      </div>
+    </div>
+
+    <!-- URL Inspector Search Bar -->
+    <div class="header-center">
+      <form id="inspectionForm">
+        <div class="search-bar-container">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input 
+            type="text" 
+            class="search-input" 
+            id="inspectionSearchInput" 
+            placeholder='Inspect any URL in "https://pdf-converter.shop/"'
+            autocomplete="off"
+          >
+        </div>
+      </form>
+    </div>
+
+    <div class="header-right">
+      <!-- Dark/Light Theme Button Toggle -->
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle Theme">
+        <span class="material-symbols-outlined" id="themeToggleIcon">dark_mode</span>
+      </button>
+      <button class="icon-btn" aria-label="Help">
+        <span class="material-symbols-outlined">help_outline</span>
+      </button>
+      <button class="icon-btn" id="bellBtn" aria-label="Notifications">
+        <span class="material-symbols-outlined">notifications</span>
+        <!-- Small Notification dot -->
+        <span class="theme-dot" style="background-color: var(--md-sys-color-error); border-color: var(--md-sys-color-surface);"></span>
+      </button>
+      <button class="icon-btn" aria-label="Google Apps">
+        <span class="material-symbols-outlined">apps</span>
+      </button>
+      <!-- User profile avatar -->
+      <div class="avatar" id="profileAvatar">
+        A
+        <div class="theme-dot"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- MAIN GRID CONTAINER --- -->
+  <div class="main-layout">
+
+    <!-- --- SIDEBAR NAVIGATION --- -->
+    <aside class="sidebar" id="sidebar">
+      
+      <!-- Property Selector Area -->
+      <div class="sidebar-property-container">
+        <button class="property-selector" id="propertySelectorBtn">
+          <div class="property-details">
+            <span class="material-symbols-outlined property-icon">language</span>
+            <span class="property-url" id="activePropertyUrl">https://pdf-converter.shop/</span>
+          </div>
+          <span class="material-symbols-outlined property-arrow">arrow_drop_down</span>
+        </button>
+
+        <!-- Dropdown menu -->
+        <div class="property-dropdown-list" id="propertyDropdown">
+          <div class="property-search-box">
+            <span class="material-symbols-outlined" style="font-size: 16px;">search</span>
+            <input type="text" class="property-search-input" id="propertySearch" placeholder="Filter property...">
+          </div>
+          <div class="property-items" id="propertyItemsList">
+            <!-- Dynamically populated in app.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation menus -->
+      <nav class="sidebar-nav">
+        
+        <!-- Overview Link -->
+        <div class="nav-item active" data-nav="overview">
+          <span class="material-symbols-outlined nav-item-icon">home</span>
+          <span class="nav-item-text">Overview</span>
+        </div>
+
+        <div class="nav-separator" style="height: 1px; background-color: var(--md-sys-color-outline-variant); margin: 8px 16px;"></div>
+
+        <!-- Performance Accordion Group -->
+        <div class="nav-group">
+          <div class="nav-group-header" data-target="groupPerformance">
+            <span class="nav-item-text">Performance</span>
+            <span class="material-symbols-outlined group-arrow">expand_more</span>
+          </div>
+          <div class="nav-group-items" id="groupPerformance">
+            <div class="nav-item" data-nav="search-results">
+              <span class="material-symbols-outlined nav-item-icon">query_stats</span>
+              <span class="nav-item-text">Search results</span>
+            </div>
+            <div class="nav-item" data-nav="discover">
+              <span class="material-symbols-outlined nav-item-icon">star</span>
+              <span class="nav-item-text">Discover</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indexing Accordion Group -->
+        <div class="nav-group">
+          <div class="nav-group-header" data-target="groupIndexing">
+            <span class="nav-item-text">Indexing</span>
+            <span class="material-symbols-outlined group-arrow">expand_more</span>
+          </div>
+          <div class="nav-group-items" id="groupIndexing">
+            <div class="nav-item" data-nav="pages">
+              <span class="material-symbols-outlined nav-item-icon">description</span>
+              <span class="nav-item-text">Pages</span>
+            </div>
+            <div class="nav-item" data-nav="sitemaps">
+              <span class="material-symbols-outlined nav-item-icon">lan</span>
+              <span class="nav-item-text">Sitemaps</span>
+            </div>
+            <div class="nav-item" data-nav="removals">
+              <span class="material-symbols-outlined nav-item-icon">block</span>
+              <span class="nav-item-text">Removals</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Accordion Group -->
+        <div class="nav-group">
+          <div class="nav-group-header" data-target="groupExperience">
+            <span class="nav-item-text">Experience</span>
+            <span class="material-symbols-outlined group-arrow">expand_more</span>
+          </div>
+          <div class="nav-group-items" id="groupExperience">
+            <div class="nav-item" data-nav="web-vitals">
+              <span class="material-symbols-outlined nav-item-icon">speed</span>
+              <span class="nav-item-text">Core Web Vitals</span>
+            </div>
+            <div class="nav-item" data-nav="https-status">
+              <span class="material-symbols-outlined nav-item-icon">lock</span>
+              <span class="nav-item-text">HTTPS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shopping Accordion Group -->
+        <div class="nav-group">
+          <div class="nav-group-header" data-target="groupShopping">
+            <span class="nav-item-text">Shopping</span>
+            <span class="material-symbols-outlined group-arrow">expand_more</span>
+          </div>
+          <div class="nav-group-items" id="groupShopping">
+            <div class="nav-item" data-nav="product-snippets">
+              <span class="material-symbols-outlined nav-item-icon">label</span>
+              <span class="nav-item-text">Product snippets</span>
+            </div>
+            <div class="nav-item" data-nav="merchant-listings">
+              <span class="material-symbols-outlined nav-item-icon">storefront</span>
+              <span class="nav-item-text">Merchant listings</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enhancements Accordion Group -->
+        <div class="nav-group">
+          <div class="nav-group-header" data-target="groupEnhancements">
+            <span class="nav-item-text">Enhancements</span>
+            <span class="material-symbols-outlined group-arrow">expand_more</span>
+          </div>
+          <div class="nav-group-items" id="groupEnhancements">
+            <div class="nav-item" data-nav="breadcrumbs">
+              <span class="material-symbols-outlined nav-item-icon">account_tree</span>
+              <span class="nav-item-text">Breadcrumbs</span>
+            </div>
+            <div class="nav-item" data-nav="faq">
+              <span class="material-symbols-outlined nav-item-icon">quiz</span>
+              <span class="nav-item-text">FAQ</span>
+            </div>
+            <div class="nav-item" data-nav="review-snippets">
+              <span class="material-symbols-outlined nav-item-icon">reviews</span>
+              <span class="nav-item-text">Review snippets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-separator" style="height: 1px; background-color: var(--md-sys-color-outline-variant); margin: 8px 16px;"></div>
+
+        <!-- Standard static sidebar items -->
+        <div class="nav-item" data-nav="security">
+          <span class="material-symbols-outlined nav-item-icon">gavel</span>
+          <span class="nav-item-text">Security & Manual Actions</span>
+        </div>
+        <div class="nav-item" data-nav="links">
+          <span class="material-symbols-outlined nav-item-icon">link</span>
+          <span class="nav-item-text">Links</span>
+        </div>
+        <div class="nav-item" data-nav="settings">
+          <span class="material-symbols-outlined nav-item-icon">settings</span>
+          <span class="nav-item-text">Settings</span>
+        </div>
+
+      </nav>
+
+      <!-- Sidebar footer -->
+      <footer class="sidebar-footer">
+        <div class="footer-nav-item" id="sendFeedbackBtn">
+          <span class="material-symbols-outlined">feedback</span>
+          <span class="footer-nav-item-text">Send feedback</span>
+        </div>
+        <div class="footer-links">
+          <a href="#" target="_blank">Privacy</a>
+          <span>•</span>
+          <a href="#" target="_blank">Terms</a>
+        </div>
+      </footer>
+    </aside>
+
+    <!-- --- WORKSPACE DASHBOARD VIEWPORT --- -->
+    <main class="content-wrapper">
+      <div class="content-container">
+        
+        <!-- Header row of the dashboard -->
+        <section class="content-header">
+          <h1 class="page-title">Overview</h1>
+          <div class="controls-group">
+            <!-- Date Filter Selector Dropdown -->
+            <div class="date-selector-wrapper">
+              <button class="btn-outlined" id="dateFilterBtn">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span id="dateFilterLabel">Last 28 days</span>
+                <span class="material-symbols-outlined btn-arrow">arrow_drop_down</span>
+              </button>
+              
+              <div class="date-dropdown" id="dateDropdown">
+                <div class="date-option" data-days="7">Last 7 days</div>
+                <div class="date-option selected" data-days="28">Last 28 days</div>
+                <div class="date-option" data-days="90">Last 3 months</div>
+                <div class="date-option" data-days="365">Last 12 months</div>
+              </div>
+            </div>
+
+            <!-- Export Button -->
+            <button class="btn-outlined" id="exportBtn">
+              <span class="material-symbols-outlined">download</span>
+              <span>Export</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- KPI Metric Card Row -->
+        <section class="kpi-grid" id="kpiGrid">
+          
+          <!-- Card 1: Total Clicks -->
+          <div class="kpi-card active" data-metric="clicks">
+            <div class="kpi-title-row">
+              <span class="kpi-title">Total clicks</span>
+              <span class="material-symbols-outlined info-icon" data-tip="The total number of times users clicked from Search Results to your website.">info</span>
+            </div>
+            <div class="kpi-number" id="clicksVal">12.4K</div>
+            <div class="kpi-bottom-row">
+              <div class="trend-badge up" id="clicksTrend">
+                <span class="material-symbols-outlined trend-badge-icon">arrow_upward</span>
+                <span class="trend-pct">18.6%</span>
+                <span class="trend-subtext">vs last 28d</span>
+              </div>
+              <div class="kpi-sparkline-box">
+                <svg viewBox="0 0 100 30" width="100%" height="100%" preserveAspectRatio="none">
+                  <path d="M 0,22 Q 10,8 20,18 T 40,24 T 60,10 T 80,14 T 100,5" fill="none" stroke="var(--color-clicks)" stroke-width="1.5" stroke-linecap="round"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Total Impressions -->
+          <div class="kpi-card active" data-metric="impressions">
+            <div class="kpi-title-row">
+              <span class="kpi-title">Total impressions</span>
+              <span class="material-symbols-outlined info-icon" data-tip="How many times a user saw a link to your site in search results.">info</span>
+            </div>
+            <div class="kpi-number" id="impressionsVal">245K</div>
+            <div class="kpi-bottom-row">
+              <div class="trend-badge up" id="impressionsTrend">
+                <span class="material-symbols-outlined trend-badge-icon">arrow_upward</span>
+                <span class="trend-pct">12.9%</span>
+                <span class="trend-subtext">vs last 28d</span>
+              </div>
+              <div class="kpi-sparkline-box">
+                <svg viewBox="0 0 100 30" width="100%" height="100%" preserveAspectRatio="none">
+                  <path d="M 0,25 Q 10,18 20,22 T 40,12 T 60,20 T 80,8 T 100,12" fill="none" stroke="var(--color-impressions)" stroke-width="1.5" stroke-linecap="round"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Average CTR -->
+          <div class="kpi-card" data-metric="ctr">
+            <div class="kpi-title-row">
+              <span class="kpi-title">Average CTR</span>
+              <span class="material-symbols-outlined info-icon" data-tip="Click-through rate: the percentage of impressions that resulted in a click.">info</span>
+            </div>
+            <div class="kpi-number" id="ctrVal">5.1%</div>
+            <div class="kpi-bottom-row">
+              <div class="trend-badge up" id="ctrTrend">
+                <span class="material-symbols-outlined trend-badge-icon">arrow_upward</span>
+                <span class="trend-pct">4.3%</span>
+                <span class="trend-subtext">vs last 28d</span>
+              </div>
+              <div class="kpi-sparkline-box">
+                <svg viewBox="0 0 100 30" width="100%" height="100%" preserveAspectRatio="none">
+                  <path d="M 0,20 Q 15,25 30,12 T 60,18 T 80,10 T 100,15" fill="none" stroke="var(--color-ctr)" stroke-width="1.5" stroke-linecap="round"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Average Position -->
+          <div class="kpi-card" data-metric="position">
+            <div class="kpi-title-row">
+              <span class="kpi-title">Average position</span>
+              <span class="material-symbols-outlined info-icon" data-tip="The average ranking of your site's URLs in search results (lower is better rank).">info</span>
+            </div>
+            <div class="kpi-number" id="positionVal">12.7</div>
+            <div class="kpi-bottom-row">
+              <div class="trend-badge up" id="positionTrend">
+                <span class="material-symbols-outlined trend-badge-icon">arrow_upward</span>
+                <span class="trend-pct">1.6</span>
+                <span class="trend-subtext">vs last 28d</span>
+              </div>
+              <div class="kpi-sparkline-box">
+                <svg viewBox="0 0 100 30" width="100%" height="100%" preserveAspectRatio="none">
+                  <path d="M 0,25 Q 15,10 30,18 T 60,14 T 80,8 T 100,5" fill="none" stroke="var(--color-position)" stroke-width="1.5" stroke-linecap="round"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Dynamic Visualization Grid -->
+        <section class="dashboard-grid">
+          
+          <!-- Column 1: Performance over time line chart -->
+          <article class="analytics-card">
+            <div class="card-header">
+              <h2 class="card-title">Performance over time</h2>
+              <a href="#" class="card-action-link" id="perfReportLink">
+                <span>Open performance report</span>
+                <span class="material-symbols-outlined action-arrow">arrow_forward</span>
+              </a>
+            </div>
+            
+            <!-- Dynamic dynamic legends based on cards active -->
+            <div class="legend-container" id="chartLegendContainer">
+              <!-- Dynamically populated in JS -->
+            </div>
+
+            <!-- Canvas wrapper -->
+            <div class="chart-container-outer">
+              <canvas id="performanceChart"></canvas>
+            </div>
+          </article>
+
+          <!-- Column 2: Traffic by channel progress bar table -->
+          <article class="analytics-card">
+            <div class="card-header">
+              <h2 class="card-title">Traffic by channel</h2>
+              <a href="#" class="card-action-link" id="channelReportLink">
+                <span>Open report</span>
+                <span class="material-symbols-outlined action-arrow">arrow_forward</span>
+              </a>
+            </div>
+            <div class="channel-table-container">
+              <table class="channel-table">
+                <thead>
+                  <tr>
+                    <th>Channel</th>
+                    <th style="text-align: right;">Clicks</th>
+                    <th style="text-align: right;">%</th>
+                  </tr>
+                </thead>
+                <tbody id="channelsTableBody">
+                  <!-- Dynamically populated in app.js -->
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+        </section>
+
+        <!-- Recent Issues Bar -->
+        <section class="recent-issues-card">
+          <div class="issues-left">
+            <span class="material-symbols-outlined issue-check-circle">check_circle</span>
+            <div class="issues-text-group">
+              <h2 class="issues-title">Recent issues</h2>
+              <p class="issues-description" id="issuesStatusText">No critical issues in the last 28 days. All issues are being monitored and none need your attention right now.</p>
+            </div>
+          </div>
+          <div class="issues-right">
+            <a href="#" class="card-action-link" id="viewAllIssuesBtn">
+              <span>View all issues</span>
+              <span class="material-symbols-outlined action-arrow">arrow_forward</span>
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- --- MODALS & DIALOG OVERLAYS --- -->
+  
+  <!-- Export Modal -->
+  <div class="modal-overlay" id="exportModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Export data</h3>
+        <button class="modal-close-btn" id="exportModalClose" aria-label="Close">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="export-options-list">
+        <button class="export-option-btn" data-type="sheets">
+          <span class="material-symbols-outlined export-icon-logo sheets">table_chart</span>
+          <span>Google Sheets</span>
+        </button>
+        <button class="export-option-btn" data-type="csv">
+          <span class="material-symbols-outlined export-icon-logo csv">csv</span>
+          <span>Download CSV</span>
+        </button>
+        <button class="export-option-btn" data-type="pdf">
+          <span class="material-symbols-outlined export-icon-logo pdf">picture_as_pdf</span>
+          <span>Download PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- URL Inspection Result Modal -->
+  <div class="modal-overlay" id="inspectionModal">
+    <div class="modal-content" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3 class="modal-title">URL inspection</h3>
+        <button class="modal-close-btn" id="inspectionModalClose" aria-label="Close">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="inspection-modal-body">
+        <div>URL in Property:</div>
+        <div class="inspection-url-tag" id="inspectedUrlLabel">https://pdf-converter.shop/some-url</div>
+        
+        <div class="inspection-status-card" id="inspectionStatusCard">
+          <span class="material-symbols-outlined inspection-status-icon success" id="inspectionStatusIcon">check_circle</span>
+          <div class="inspection-status-details">
+            <span class="inspection-status-title" id="inspectionStatusTitle">URL is on Google</span>
+            <span class="inspection-status-desc" id="inspectionStatusDesc">It can appear in Google Search results (if not blocked by index issues).</span>
+          </div>
+        </div>
+
+        <div style="font-weight: 600; font-size: 14px; margin-top: 8px;">Details</div>
+        
+        <div class="inspection-collapsible-item">
+          <div class="inspection-item-left">
+            <span class="material-symbols-outlined inspection-item-icon">cloud_done</span>
+            <span>Discovery & Crawling</span>
+          </div>
+          <span class="material-symbols-outlined" style="color: #137333;">done</span>
+        </div>
+
+        <div class="inspection-collapsible-item">
+          <div class="inspection-item-left">
+            <span class="material-symbols-outlined inspection-item-icon">pageview</span>
+            <span>Indexing status</span>
+          </div>
+          <span class="material-symbols-outlined" style="color: #137333;">done</span>
+        </div>
+
+        <div class="inspection-collapsible-item">
+          <div class="inspection-item-left">
+            <span class="material-symbols-outlined inspection-item-icon">smartphone</span>
+            <span>Mobile Usability</span>
+          </div>
+          <span class="material-symbols-outlined" style="color: #137333;">done</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventRent - Rent Sound, Lights & Event Equipment</title>
+  <!-- Google Fonts: Plus Jakarta Sans for a clean, premium modern font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="rental.css">
+</head>
+<body>
+
+  <!-- App Shell Container to restrict maximum width and center the mobile-first design -->
+  <div class="app-container">
+
+    <!-- --- TOP HEADER --- -->
+    <header class="main-header">
+      <div class="header-left">
+        <button class="icon-button menu-btn" aria-label="Menu">
+          <svg viewBox="0 0 24 24" class="svg-icon"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+        
+        <!-- Brand Name added next to menu as per requirement -->
+        <span class="logo-brand">EventRent</span>
+
+        <div class="location-selector">
+          <div class="location-label-row">
+            <svg viewBox="0 0 24 24" class="svg-icon pin-icon"><path d="M12 2a8 8 0 00-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 00-8-8zM12 13a3 3 0 110-6 3 3 0 010 6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="location-title">Your Area</span>
+            <svg viewBox="0 0 24 24" class="svg-icon caret-icon"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="location-sub">Indore, Madhya Pradesh</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- WhatsApp Icon (Green Accent) -->
+        <a href="https://wa.me/#" class="icon-button whatsapp-btn" aria-label="WhatsApp Support">
+          <svg viewBox="0 0 24 24" class="svg-icon whatsapp-icon" fill="currentColor">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.37 5.054L2 22l5.077-1.331a9.907 9.907 0 004.933 1.317h.004c5.505 0 9.989-4.478 9.99-9.986 0-2.67-1.037-5.178-2.924-7.065A9.927 9.927 0 0012.012 2zm5.735 14.13c-.315.88-1.536 1.62-2.115 1.71-.577.09-1.154.12-3.7-.93a12.87 12.87 0 01-5.328-4.697c-.63-.84-1.12-1.87-1.12-2.93 0-1.13.59-1.68.8-1.9.21-.22.46-.27.61-.27.15 0 .3 0 .43.01.14 0 .32-.06.5.38.19.45.64 1.56.7 1.68.06.12.1.26.02.43-.08.16-.16.27-.27.4-.11.13-.24.3-.34.4-.11.11-.23.23-.1.45.13.22.58.96 1.25 1.56.86.77 1.58 1.01 1.8 1.12.22.11.35.09.48-.06.13-.15.56-.65.71-.87.15-.22.3-.18.5-.11.2.07 1.27.6 1.49.71.22.11.37.17.43.27.06.1.06.57-.25 1.45z"/>
+          </svg>
+        </a>
+        <!-- Notification Bell (Badge 3) -->
+        <button class="icon-button notification-btn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" class="svg-icon"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="badge red-badge">3</span>
+        </button>
+        <!-- Shopping Cart (Badge 2) -->
+        <button class="icon-button cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" class="svg-icon"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="badge blue-badge">2</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- --- HERO BANNER --- -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Make Your Event<br>
+          <span class="hero-highlight">Unforgettable <span class="sparkle">✦</span></span>
+        </h1>
+        <p class="hero-subtitle">
+          Rent Lights, Sound, and Event<br>
+          Equipment – Delivered in Your City
+        </p>
+        <div class="trust-pill">
+          <svg viewBox="0 0 24 24" class="svg-icon pill-pin"><path d="M12 2a8 8 0 00-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 00-8-8zM12 13a3 3 0 110-6 3 3 0 010 6z" fill="currentColor"/></svg>
+          <span>Trusted by 1000+ customers in your area</span>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="assets/hero_equipment.png" alt="Event Equipment Stack" class="hero-image">
+      </div>
+    </section>
+
+    <!-- --- SEARCH & HELP BAR --- -->
+    <section class="search-help-bar">
+      <div class="search-container">
+        <svg viewBox="0 0 24 24" class="search-icon"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <input type="text" class="search-input" placeholder="Search equipment, lights, speakers...">
+        <button class="filter-button" aria-label="Filter results">
+          <svg viewBox="0 0 24 24" class="svg-icon"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <button class="need-help-button">
+        <svg viewBox="0 0 24 24" class="svg-icon help-chat-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Need Help?</span>
+      </button>
+    </section>
+
+    <!-- --- CATEGORIES SLIDER --- -->
+    <section class="categories-section">
+      <div class="category-card sound">
+        <div class="category-icon-box">
+          <svg viewBox="0 0 24 24" class="category-icon"><rect x="4" y="2" width="16" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="14" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="6" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <span class="category-label">Sound</span>
+      </div>
+
+      <div class="category-card lights">
+        <div class="category-icon-box">
+          <svg viewBox="0 0 24 24" class="category-icon"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 006 8c0 1 .4 2.2 1.5 3.5.7.8 1.3 1.5 1.5 2.5h6zM9 18h6M10 22h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="category-label">Lights</span>
+      </div>
+
+      <div class="category-card photo-video">
+        <div class="category-icon-box">
+          <svg viewBox="0 0 24 24" class="category-icon"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <span class="category-label">Photo & Video</span>
+      </div>
+
+      <div class="category-card stage-rigging">
+        <div class="category-icon-box">
+          <svg viewBox="0 0 24 24" class="category-icon"><path d="M3 21h18M6 21V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v15M6 8h12M6 14h12M9 4v17M15 4v17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <span class="category-label">Stage & Rigging</span>
+      </div>
+
+      <div class="category-card power-generators">
+        <div class="category-icon-box">
+          <svg viewBox="0 0 24 24" class="category-icon"><rect x="3" y="6" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 6V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2M12 10v6M9 13h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <span class="category-label">Power & Generators</span>
+      </div>
+
+      <div class="category-card view-all">
+        <div class="category-icon-box">
+          <svg viewBox="0 0 24 24" class="category-icon"><rect x="3" y="3" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <span class="category-label">View All</span>
+      </div>
+    </section>
+
+    <!-- --- DELIVERY LOCATION ROW --- -->
+    <section class="delivery-location-card">
+      <div class="delivery-details">
+        <div class="location-pin-circle">
+          <svg viewBox="0 0 24 24" class="svg-icon delivery-pin"><path d="M12 2a8 8 0 00-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 00-8-8zM12 13a3 3 0 110-6 3 3 0 010 6z" fill="currentColor"/></svg>
+        </div>
+        <div class="delivery-text">
+          <span class="delivery-title">Delivering to</span>
+          <span class="delivery-address">Vijay Nagar, Indore</span>
+        </div>
+      </div>
+      <button class="change-location-btn">
+        <span>Change</span>
+        <svg viewBox="0 0 24 24" class="svg-icon arrow-right"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </section>
+
+    <!-- --- TRUST INDICATORS --- -->
+    <section class="trust-indicators-grid">
+      <div class="trust-item">
+        <div class="trust-icon-wrapper verified">
+          <svg viewBox="0 0 24 24" class="trust-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 11l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="trust-info">
+          <h3 class="trust-heading">Verified Vendors</h3>
+          <p class="trust-desc">Trusted & reliable local partners</p>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon-wrapper delivery">
+          <svg viewBox="0 0 24 24" class="trust-icon"><rect x="1" y="3" width="15" height="13" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="5.5" cy="18.5" r="2.5" fill="currentColor"/><circle cx="18.5" cy="18.5" r="2.5" fill="currentColor"/></svg>
+        </div>
+        <div class="trust-info">
+          <h3 class="trust-heading">Fast Delivery</h3>
+          <p class="trust-desc">On-time delivery in your area</p>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon-wrapper support">
+          <svg viewBox="0 0 24 24" class="trust-icon"><path d="M3 18v-6a9 9 0 0 1 18 0v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" fill="currentColor"/></svg>
+        </div>
+        <div class="trust-info">
+          <h3 class="trust-heading">24/7 Support</h3>
+          <p class="trust-desc">We're here to help anytime</p>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <div class="trust-icon-wrapper secure">
+          <svg viewBox="0 0 24 24" class="trust-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><text x="8.5" y="15" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10" fill="currentColor">₹</text></svg>
+        </div>
+        <div class="trust-info">
+          <h3 class="trust-heading">Secure Payments</h3>
+          <p class="trust-desc">100% secure transactions</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- --- POPULAR EQUIPMENT --- -->
+    <section class="popular-section">
+      <div class="section-header">
+        <h2 class="section-title">Popular Equipment</h2>
+        <a href="products.html" class="see-all-link">
+          <span>See All</span>
+          <svg viewBox="0 0 24 24" class="svg-icon arrow-right"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="products-grid">
+        <!-- Card 1: JBL EON 615 Speaker -->
+        <article class="product-card">
+          <button class="favorite-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" class="heart-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="product-image-box">
+            <img src="assets/speaker_jbl.png" alt="JBL EON 615 Speaker" class="product-image">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">JBL EON 615 Speaker</h3>
+            <div class="product-price-row">
+              <span class="price">₹1,200</span>
+              <span class="period">/ day</span>
+            </div>
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" class="star-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/></svg>
+              <span class="rating-val">4.6</span>
+              <span class="rating-count">(120)</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Moving Head Light -->
+        <article class="product-card">
+          <button class="favorite-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" class="heart-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="product-image-box">
+            <img src="assets/moving_head.png" alt="Moving Head Light" class="product-image">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">Moving Head Light</h3>
+            <div class="product-price-row">
+              <span class="price">₹900</span>
+              <span class="period">/ day</span>
+            </div>
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" class="star-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/></svg>
+              <span class="rating-val">4.7</span>
+              <span class="rating-count">(85)</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Wireless Mic Set (2 Mic) -->
+        <article class="product-card">
+          <button class="favorite-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" class="heart-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="product-image-box">
+            <img src="assets/wireless_mic.png" alt="Wireless Mic Set (2 Mic)" class="product-image">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">Wireless Mic Set (2 Mic)</h3>
+            <div class="product-price-row">
+              <span class="price">₹500</span>
+              <span class="period">/ day</span>
+            </div>
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" class="star-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/></svg>
+              <span class="rating-val">4.5</span>
+              <span class="rating-count">(68)</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Sound Mixer (12 Channel) -->
+        <article class="product-card">
+          <button class="favorite-btn" aria-label="Add to wishlist">
+            <svg viewBox="0 0 24 24" class="heart-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="product-image-box">
+            <img src="assets/sound_mixer.png" alt="Sound Mixer (12 Channel)" class="product-image">
+          </div>
+          <div class="product-details">
+            <h3 class="product-name">Sound Mixer (12 Channel)</h3>
+            <div class="product-price-row">
+              <span class="price">₹1,000</span>
+              <span class="period">/ day</span>
+            </div>
+            <div class="product-rating">
+              <svg viewBox="0 0 24 24" class="star-icon"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="currentColor"/></svg>
+              <span class="rating-val">4.6</span>
+              <span class="rating-count">(95)</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- --- FREE DELIVERY OFFER BANNER --- -->
+    <section class="free-delivery-banner">
+      <div class="banner-left">
+        <img src="assets/delivery_truck.png" alt="Delivery Truck" class="truck-illustration">
+      </div>
+      <div class="banner-mid">
+        <h2 class="banner-headline">Free Delivery <span class="truck-emoji">🚚</span></h2>
+        <p class="banner-subtext">On orders above ₹3,000</p>
+      </div>
+      <!-- Map indicator graphic -->
+      <div class="map-path-indicator">
+        <svg viewBox="0 0 80 40" class="map-svg">
+          <!-- Dot representing start -->
+          <circle cx="10" cy="30" r="3.5" fill="#f59e0b" />
+          <!-- Pin icon at end -->
+          <path d="M68 18c-3 0-5.5 2.5-5.5 5.5 0 3.5 5.5 9.5 5.5 9.5s5.5-6 5.5-9.5c0-3-2.5-5.5-5.5-5.5zm0 8a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" fill="#f59e0b" />
+          <!-- Dotted path -->
+          <path d="M10 30 Q 30 15, 48 30 T 68 23" fill="none" stroke="#d1d5db" stroke-width="2" stroke-dasharray="4,4" />
+        </svg>
+      </div>
+      <div class="banner-right">
+        <button class="book-now-btn">Book Now</button>
+      </div>
+    </section>
+
+    <!-- Spacer to prevent content from being covered by sticky bottom bar -->
+    <div class="footer-spacer"></div>
+
+    <!-- --- BOTTOM NAVIGATION BAR --- -->
+    <nav class="bottom-nav">
+      <a href="#" class="nav-item active">
+        <svg viewBox="0 0 24 24" class="nav-icon"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="currentColor"/></svg>
+        <span class="nav-label">Home</span>
+      </a>
+
+      <a href="products.html" class="nav-item">
+        <svg viewBox="0 0 24 24" class="nav-icon"><rect x="3" y="3" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="nav-label">Categories</span>
+      </a>
+
+      <a href="booking.html" class="nav-item">
+        <svg viewBox="0 0 24 24" class="nav-icon"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="nav-label">Bookings</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <svg viewBox="0 0 24 24" class="nav-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="nav-label">Messages</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <svg viewBox="0 0 24 24" class="nav-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="nav-label">Profile</span>
+      </a>
+    </nav>
+
+  </div>
+
+</body>
+</html>

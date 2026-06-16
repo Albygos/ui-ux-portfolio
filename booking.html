@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Booking - EventRent</title>
+  <!-- Google Fonts: Plus Jakarta Sans for a clean, premium modern font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+
+  <!-- App Shell Container to restrict maximum width and center the mobile-first design -->
+  <div class="app-container">
+
+    <!-- --- TOP HEADER --- -->
+    <header class="main-header">
+      <div class="header-left">
+        <!-- Back Arrow Button -->
+        <a href="rental.html" class="icon-button back-btn" aria-label="Go Back">
+          <svg viewBox="0 0 24 24" class="svg-icon"><path d="M19 12H5M12 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="header-title-box">
+          <h1 class="page-title">Booking</h1>
+          <span class="header-subtitle">Create a new booking</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <!-- WhatsApp Icon (Green Accent) -->
+        <a href="https://wa.me/#" class="icon-button whatsapp-btn" aria-label="WhatsApp Support">
+          <svg viewBox="0 0 24 24" class="svg-icon whatsapp-icon" fill="currentColor">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.96 9.96 0 001.37 5.054L2 22l5.077-1.331a9.907 9.907 0 004.933 1.317h.004c5.505 0 9.989-4.478 9.99-9.986 0-2.67-1.037-5.178-2.924-7.065A9.927 9.927 0 0012.012 2zm5.735 14.13c-.315.88-1.536 1.62-2.115 1.71-.577.09-1.154.12-3.7-.93a12.87 12.87 0 01-5.328-4.697c-.63-.84-1.12-1.87-1.12-2.93 0-1.13.59-1.68.8-1.9.21-.22.46-.27.61-.27.15 0 .3 0 .43.01.14 0 .32-.06.5.38.19.45.64 1.56.7 1.68.06.12.1.26.02.43-.08.16-.16.27-.27.4-.11.13-.24.3-.34.4-.11.11-.23.23-.1.45.13.22.58.96 1.25 1.56.86.77 1.58 1.01 1.8 1.12.22.11.35.09.48-.06.13-.15.56-.65.71-.87.15-.22.3-.18.5-.11.2.07 1.27.6 1.49.71.22.11.37.17.43.27.06.1.06.57-.25 1.45z"/>
+          </svg>
+        </a>
+        <!-- Notification Bell (Badge 3) -->
+        <button class="icon-button notification-btn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" class="svg-icon"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="badge red-badge">3</span>
+        </button>
+        <!-- Shopping Cart (Badge 2) -->
+        <button class="icon-button cart-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" class="svg-icon"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="badge blue-badge">2</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- --- PROGRESS STEPPER --- -->
+    <section class="booking-stepper">
+      <div class="step-container active">
+        <div class="step-circle">1</div>
+        <span class="step-label">Select Dates</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-container">
+        <div class="step-circle">2</div>
+        <span class="step-label">Delivery & Setup</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-container">
+        <div class="step-circle">3</div>
+        <span class="step-label">Review & Pay</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-container">
+        <div class="step-circle">4</div>
+        <span class="step-label">Confirmation</span>
+      </div>
+    </section>
+
+    <!-- --- SELECT DATES PANEL --- -->
+    <section class="dates-panel-card">
+      <h2 class="panel-title">Select Dates</h2>
+      
+      <div class="booking-type-row">
+        <span class="booking-type-label">Booking Type</span>
+        <div class="booking-type-pills">
+          <button class="type-pill active">Single Day</button>
+          <button class="type-pill">Multiple Days</button>
+        </div>
+      </div>
+
+      <div class="inputs-grid">
+        <!-- Start Date field -->
+        <div class="input-field-box date-box">
+          <span class="field-title">Start Date</span>
+          <div class="field-content-row">
+            <svg viewBox="0 0 24 24" class="field-icon"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <div class="field-texts">
+              <span class="field-value">24 May 2025</span>
+              <span class="field-sub">Sat</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Start Time field -->
+        <div class="input-field-box dropdown-box">
+          <span class="field-title">Start Time</span>
+          <div class="field-content-row">
+            <svg viewBox="0 0 24 24" class="field-icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div class="field-texts">
+              <span class="field-value">10:00 AM</span>
+            </div>
+            <svg viewBox="0 0 24 24" class="dropdown-caret-icon"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <!-- End Time field -->
+        <div class="input-field-box dropdown-box">
+          <span class="field-title">End Time</span>
+          <div class="field-content-row">
+            <svg viewBox="0 0 24 24" class="field-icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <div class="field-texts">
+              <span class="field-value">10:00 PM</span>
+            </div>
+            <svg viewBox="0 0 24 24" class="dropdown-caret-icon"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="dates-footer-note">
+        <svg viewBox="0 0 24 24" class="info-note-icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 16v-4M12 8h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Same day booking • Total 12 hours</span>
+      </div>
+    </section>
+
+    <!-- --- YOUR ITEMS SECTION --- -->
+    <section class="items-panel">
+      <div class="panel-header">
+        <h2 class="panel-title">Your Items (4)</h2>
+        <button class="edit-items-link">Edit Items</button>
+      </div>
+
+      <div class="items-list-wrapper">
+        <!-- Item 1: JBL EON 615 Speaker -->
+        <article class="cart-item-row">
+          <div class="item-img-container">
+            <img src="assets/speaker_jbl.png" alt="JBL EON Speaker" class="item-img">
+          </div>
+          
+          <div class="item-info-col">
+            <h3 class="item-title">JBL EON 615 Speaker</h3>
+            <span class="item-category">Sound Equipment</span>
+          </div>
+
+          <div class="item-quantity-stepper">
+            <button class="step-btn decrease" aria-label="Decrease quantity">
+              <svg viewBox="0 0 24 24" class="step-btn-icon"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </button>
+            <span class="stepper-val">2</span>
+            <button class="step-btn increase" aria-label="Increase quantity">
+              <svg viewBox="0 0 24 24" class="step-btn-icon"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+
+          <div class="item-price-col">
+            <span class="item-total-price">₹2,400</span>
+            <span class="item-unit-price">₹1,200 × 2</span>
+          </div>
+
+          <button class="item-delete-btn" aria-label="Remove item">
+            <svg viewBox="0 0 24 24" class="delete-icon"><polyline points="3 6 5 6 21 6M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </article>
+
+        <!-- Item 2: Moving Head Light -->
+        <article class="cart-item-row">
+          <div class="item-img-container">
+            <img src="assets/moving_head.png" alt="Moving Head Light" class="item-img">
+          </div>
+          
+          <div class="item-info-col">
+            <h3 class="item-title">Moving Head Light</h3>
+            <span class="item-category">Lighting</span>
+          </div>
+
+          <div class="item-quantity-stepper">
+            <button class="step-btn decrease" aria-label="Decrease quantity">
+              <svg viewBox="0 0 24 24" class="step-btn-icon"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </button>
+            <span class="stepper-val">2</span>
+            <button class="step-btn increase" aria-label="Increase quantity">
+              <svg viewBox="0 0 24 24" class="step-btn-icon"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+
+          <div class="item-price-col">
+            <span class="item-total-price">₹1,800</span>
+            <span class="item-unit-price">₹900 × 2</span>
+          </div>
+
+          <button class="item-delete-btn" aria-label="Remove item">
+            <svg viewBox="0 0 24 24" class="delete-icon"><polyline points="3 6 5 6 21 6M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </article>
+
+        <!-- Item 3: Wireless Mic Set (2 Mic) -->
+        <article class="cart-item-row">
+          <div class="item-img-container">
+            <img src="assets/wireless_mic.png" alt="Wireless Mic Set" class="item-img">
+          </div>
+          
+          <div class="item-info-col">
+            <h3 class="item-title">Wireless Mic Set (2 Mic)</h3>
+            <span class="item-category">Audio</span>
+          </div>
+
+          <div class="item-quantity-stepper">
+            <button class="step-btn decrease" aria-label="Decrease quantity">
+              <svg viewBox="0 0 24 24" class="step-btn-icon"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </button>
+            <span class="stepper-val">1</span>
+            <button class="step-btn increase" aria-label="Increase quantity">
+              <svg viewBox="0 0 24 24" class="step-btn-icon"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+
+          <div class="item-price-col">
+            <span class="item-total-price">₹500</span>
+            <span class="item-unit-price">₹500 × 1</span>
+          </div>
+
+          <button class="item-delete-btn" aria-label="Remove item">
+            <svg viewBox="0 0 24 24" class="delete-icon"><polyline points="3 6 5 6 21 6M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </article>
+
+        <!-- Item 4: Sound Mixer (12 Channel) -->
+        <article class="cart-item-row">
+          <div class="item-img-container">
+            <img src="assets/sound_mixer.png" alt="Sound Mixer" class="item-img">
+          </div>
+          
+          <div class="item-info-col">
+            <h3 class="item-title">Sound Mixer (12 Channel)</h3>
+            <span class="item-category">Mixer</span>
+          </div>
+
+          <div class="item-quantity-stepper">
+            <button class="step-btn decrease" aria-label="Decrease quantity">
+              <svg viewBox="0 0 24 24" class="step-btn-icon"><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </button>
+            <span class="stepper-val">1</span>
+            <button class="step-btn increase" aria-label="Increase quantity">
+              <svg viewBox="0 0 24 24" class="step-btn-icon"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+
+          <div class="item-price-col">
+            <span class="item-total-price">₹1,000</span>
+            <span class="item-unit-price">₹1,000 × 1</span>
+          </div>
+
+          <button class="item-delete-btn" aria-label="Remove item">
+            <svg viewBox="0 0 24 24" class="delete-icon"><polyline points="3 6 5 6 21 6M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </article>
+      </div>
+
+      <!-- Action items row: Add More Items & Clear All -->
+      <div class="items-action-footer">
+        <button class="btn-text-action add-more-btn">
+          <svg viewBox="0 0 24 24" class="action-btn-icon"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <span>Add More Items</span>
+        </button>
+        <button class="btn-text-action clear-all-btn">
+          <svg viewBox="0 0 24 24" class="action-btn-icon"><polyline points="3 6 5 6 21 6M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Clear All</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- --- PRICE SUMMARY PANEL --- -->
+    <section class="price-summary-panel">
+      <h2 class="panel-title">Price Summary</h2>
+      
+      <div class="summary-rows-container">
+        <div class="summary-row">
+          <span class="row-label">Item Total</span>
+          <span class="row-value">₹5,700</span>
+        </div>
+        <div class="summary-row">
+          <span class="row-label">Delivery Charges</span>
+          <span class="row-value">₹400</span>
+        </div>
+        <div class="summary-row">
+          <div class="row-label-with-icon">
+            <span class="row-label">Setup Charges</span>
+            <svg viewBox="0 0 24 24" class="label-info-icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 16v-4M12 8h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <span class="row-value">₹500</span>
+        </div>
+        
+        <!-- Dotted line divider -->
+        <div class="summary-divider"></div>
+        
+        <div class="summary-row total-row">
+          <span class="total-label">Total Amount</span>
+          <span class="total-value">₹6,600</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- --- COUPON PANEL --- -->
+    <section class="coupon-panel">
+      <div class="coupon-content">
+        <div class="coupon-icon-box">
+          <svg viewBox="0 0 24 24" class="coupon-icon"><path d="M15 5v14M9 5v14M4 12h16M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="coupon-texts">
+          <h3 class="coupon-headline">Have a coupon code?</h3>
+          <p class="coupon-sub">You will be able to apply a coupon in the next step</p>
+        </div>
+      </div>
+      <button class="apply-coupon-btn">
+        <span>Apply</span>
+        <svg viewBox="0 0 24 24" class="btn-chevron"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </section>
+
+    <!-- --- FOOTER ACTIONS --- -->
+    <section class="booking-checkout-footer">
+      <button class="checkout-continue-btn" onclick="window.location.href='orders.html'">Continue</button>
+      <p class="checkout-footer-sub">You can review your order in the next step</p>
+    </section>
+
+    <!-- Spacer to prevent content from being covered by sticky bottom bar -->
+    <div class="footer-spacer"></div>
+
+    <!-- --- BOTTOM NAVIGATION BAR --- -->
+    <nav class="bottom-nav">
+      <a href="rental.html" class="nav-item">
+        <svg viewBox="0 0 24 24" class="nav-icon"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="nav-label">Home</span>
+      </a>
+
+      <a href="products.html" class="nav-item">
+        <svg viewBox="0 0 24 24" class="nav-icon"><rect x="3" y="3" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="nav-label">Categories</span>
+      </a>
+
+      <a href="#" class="nav-item active">
+        <svg viewBox="0 0 24 24" class="nav-icon"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="nav-label">Bookings</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <svg viewBox="0 0 24 24" class="nav-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="nav-label">Messages</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <svg viewBox="0 0 24 24" class="nav-icon"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="nav-label">Profile</span>
+      </a>
+    </nav>
+
+  </div>
+
+</body>
+</html>

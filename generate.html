@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Image - Aerix AI</title>
+  <!-- Google Fonts: Plus Jakarta Sans for high-fidelity typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="generate.css">
+</head>
+<body>
+
+  <!-- Full Screen Dashboard Layout -->
+  <div class="dashboard-container">
+
+    <!-- ==========================================================================
+         1. LEFT SIDEBAR NAVIGATION
+         ========================================================================== -->
+    <aside class="sidebar">
+      
+      <!-- Brand Logo -->
+      <div class="sidebar-logo">
+        <svg viewBox="0 0 24 24" class="logo-icon">
+          <path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="3" fill="currentColor"/>
+        </svg>
+        <span class="logo-text">Aerix <span class="logo-accent">AI</span></span>
+      </div>
+
+      <!-- Create New Button -->
+      <button class="btn-create-new">
+        <svg viewBox="0 0 24 24" class="plus-icon"><line x1="12" y1="5" x2="12" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <span>Create New</span>
+      </button>
+
+      <!-- Main Navigation Menu -->
+      <nav class="sidebar-menu">
+        <a href="aerix.html" class="menu-item">
+          <svg viewBox="0 0 24 24" class="menu-icon"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="#" class="menu-item active">
+          <svg viewBox="0 0 24 24" class="menu-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+          <span>Generate</span>
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" class="menu-icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Explore</span>
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" class="menu-icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span>History</span>
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" class="menu-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span>Collections</span>
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" class="menu-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          <span>Favorites</span>
+        </a>
+      </nav>
+
+      <!-- Library Section Divider -->
+      <div class="sidebar-divider"></div>
+
+      <!-- Library Menu -->
+      <div class="sidebar-label">Library</div>
+      <nav class="sidebar-menu library">
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" class="menu-icon"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span>My Images</span>
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" class="menu-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Uploads</span>
+        </a>
+        <a href="#" class="menu-item">
+          <svg viewBox="0 0 24 24" class="menu-icon"><polyline points="3 6 5 6 21 6M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Trash</span>
+        </a>
+      </nav>
+
+      <!-- Pro Upgrade Card -->
+      <div class="upgrade-card">
+        <h4 class="upgrade-title">Upgrade to Pro</h4>
+        <p class="upgrade-desc">Unlock premium models, higher limits, and more.</p>
+        <button class="btn-upgrade">
+          <svg viewBox="0 0 24 24" class="upgrade-crown-icon"><path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z" fill="currentColor"/></svg>
+          <span>Upgrade Now</span>
+        </button>
+      </div>
+
+      <!-- Theme Switch Footer -->
+      <footer class="sidebar-footer">
+        <div class="theme-toggle-container">
+          <svg viewBox="0 0 24 24" class="theme-icon sun"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/></svg>
+          <div class="toggle-switch active">
+            <span class="switch-knob"></span>
+          </div>
+          <span class="theme-label">Light</span>
+          <svg viewBox="0 0 24 24" class="theme-icon moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/></svg>
+        </div>
+      </footer>
+
+    </aside>
+
+    <!-- ==========================================================================
+         2. MAIN WORKSPACE CONTENT
+         ========================================================================== -->
+    <main class="workspace-main">
+      
+      <!-- Top Utility Header -->
+      <header class="workspace-header">
+        <button class="btn-utility history-btn">
+          <svg viewBox="0 0 24 24" class="util-icon"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><polyline points="12 6 12 12 16 14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <span>History</span>
+        </button>
+        
+        <div class="credits-badge">
+          <!-- Small gold star/credits icon -->
+          <svg viewBox="0 0 24 24" class="credits-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+          <span>2,450 Credits</span>
+        </div>
+
+        <!-- Profile Avatar selector -->
+        <div class="profile-dropdown">
+          <div class="avatar-box">
+            <!-- Mock Avatar SVG displaying a stylized profile card face -->
+            <svg viewBox="0 0 24 24" class="avatar-svg"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M6 20v-2a6 6 0 0 1 12 0v2" fill="currentColor"/></svg>
+          </div>
+          <svg viewBox="0 0 24 24" class="dropdown-arrow"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </header>
+
+      <!-- Creation Workspace -->
+      <div class="workspace-content-scroller">
+        
+        <h2 class="workspace-title">Generate Image</h2>
+        <p class="workspace-desc">Describe your idea, upload an image, or both. Then let AI bring it to life.</p>
+
+        <!-- Form Step 1: Prompt Input -->
+        <section class="workspace-section-card">
+          <div class="step-header">
+            <span class="step-number">1</span>
+            <h3 class="step-title">Enter your prompt</h3>
+          </div>
+
+          <div class="prompt-textarea-wrapper">
+            <textarea class="prompt-input-textarea" placeholder="Describe the image you want to create..."></textarea>
+            
+            <div class="prompt-textarea-footer">
+              <div class="textarea-actions">
+                <button class="textarea-btn btn-enhance">
+                  <svg viewBox="0 0 24 24" class="btn-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+                  <span>Enhance Prompt</span>
+                </button>
+                <button class="textarea-btn btn-inspire">
+                  <svg viewBox="0 0 24 24" class="btn-icon"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  <span>Inspire Me</span>
+                </button>
+              </div>
+              <span class="char-counter">0 / 1000</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Form Step 2: Reference Image (Optional) -->
+        <section class="workspace-section-card">
+          <div class="step-header">
+            <span class="step-number">2</span>
+            <h3 class="step-title">Add reference image (optional)</h3>
+          </div>
+          <p class="step-subheading">Upload an image to guide the style, composition, or content.</p>
+
+          <!-- Dropzone container -->
+          <div class="upload-dropzone">
+            <div class="dropzone-inner">
+              <svg viewBox="0 0 24 24" class="upload-cloud-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h4 class="dropzone-headline">Drag & drop an image here</h4>
+              <p class="dropzone-action-text">or <span class="highlight">click to upload</span></p>
+              <span class="dropzone-limits">PNG, JPG, WEBP up to 10MB</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Examples Showcase Carousel -->
+        <section class="examples-section">
+          <div class="examples-header">
+            <svg viewBox="0 0 24 24" class="examples-sparkle"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+            <h3 class="examples-title">Try these examples</h3>
+          </div>
+
+          <div class="examples-grid-row">
+            
+            <div class="example-thumb-card">
+              <div class="thumb-img-wrapper">
+                <img src="assets/aerix_city.png" alt="Futuristic City" class="thumb-img">
+              </div>
+              <span class="thumb-caption">Futuristic city at sunset</span>
+            </div>
+
+            <div class="example-thumb-card">
+              <div class="thumb-img-wrapper">
+                <img src="assets/aerix_cabin.png" alt="Cozy Cabin" class="thumb-img">
+              </div>
+              <span class="thumb-caption">Cozy cabin in the woods</span>
+            </div>
+
+            <div class="example-thumb-card">
+              <div class="thumb-img-wrapper">
+                <img src="assets/aerix_astronaut.png" alt="Astronaut Mars" class="thumb-img">
+              </div>
+              <span class="thumb-caption">Astronaut on Mars</span>
+            </div>
+
+            <div class="example-thumb-card">
+              <div class="thumb-img-wrapper">
+                <img src="assets/aerix_tree.png" alt="Fantasy Tree" class="thumb-img">
+              </div>
+              <span class="thumb-caption">Fantasy landscape</span>
+            </div>
+
+            <div class="example-thumb-card">
+              <div class="thumb-img-wrapper">
+                <img src="assets/aerix_neon_girl.png" alt="Neon cyber portrait" class="thumb-img">
+              </div>
+              <span class="thumb-caption">Cyberpunk portrait</span>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- ==========================================================================
+         3. RIGHT SETTINGS PANEL
+         ========================================================================== -->
+    <aside class="settings-panel">
+      <div class="settings-scroller">
+        
+        <!-- Settings Section 1: AI Model -->
+        <div class="setting-group">
+          <label class="setting-label">Model</label>
+          <span class="setting-desc">Choose the AI model</span>
+          
+          <div class="setting-dropdown-box">
+            <div class="dropdown-content-left">
+              <svg viewBox="0 0 24 24" class="dropdown-icon-purple"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+              <span class="dropdown-text">Aerix v2 (Default)</span>
+            </div>
+            <svg viewBox="0 0 24 24" class="caret-down"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <!-- Settings Section 2: Aspect Ratio -->
+        <div class="setting-group">
+          <label class="setting-label">Aspect Ratio</label>
+          <span class="setting-desc">Choose image dimensions</span>
+          
+          <div class="aspect-ratio-grid">
+            <button class="aspect-card active">
+              <div class="ratio-box square-1-1"></div>
+              <span class="ratio-text">1:1</span>
+            </button>
+            <button class="aspect-card">
+              <div class="ratio-box rect-16-9"></div>
+              <span class="ratio-text">16:9</span>
+            </button>
+            <button class="aspect-card">
+              <div class="ratio-box rect-4-3"></div>
+              <span class="ratio-text">4:3</span>
+            </button>
+            <button class="aspect-card">
+              <div class="ratio-box rect-3-4"></div>
+              <span class="ratio-text">3:4</span>
+            </button>
+            <button class="aspect-card">
+              <div class="ratio-box rect-9-16"></div>
+              <span class="ratio-text">9:16</span>
+            </button>
+            <button class="aspect-card">
+              <div class="ratio-box dots-more">...</div>
+              <span class="ratio-text">More</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Settings Section 3: Style -->
+        <div class="setting-group">
+          <label class="setting-label">Style</label>
+          <span class="setting-desc">Choose a style (optional)</span>
+          
+          <div class="setting-dropdown-box">
+            <div class="dropdown-content-left">
+              <div class="dropdown-style-thumb">
+                <!-- Reused neon girl for style photo thumbnail -->
+                <img src="assets/aerix_neon_girl.png" alt="Style Thumbnail" class="style-thumb-img">
+              </div>
+              <span class="dropdown-text">Photorealistic</span>
+            </div>
+            <svg viewBox="0 0 24 24" class="caret-down"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <!-- Settings Section 4: Quality -->
+        <div class="setting-group">
+          <label class="setting-label">Quality</label>
+          <span class="setting-desc">More steps = better quality</span>
+          
+          <div class="segmented-control quality-selector">
+            <button class="segment-btn">Standard</button>
+            <button class="segment-btn active">High</button>
+            <button class="segment-btn">Ultra</button>
+          </div>
+        </div>
+
+        <!-- Settings Section 5: Number of Images -->
+        <div class="setting-group">
+          <label class="setting-label">Number of Images</label>
+          <span class="setting-desc">How many variations?</span>
+          
+          <div class="variations-row-selectors">
+            <button class="variation-box active">1</button>
+            <button class="variation-box">2</button>
+            <button class="variation-box">4</button>
+            <button class="variation-box">8</button>
+          </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div class="generate-action-wrapper">
+          <button class="btn-gradient btn-generate-big">
+            <div class="btn-generate-main">
+              <svg viewBox="0 0 24 24" class="btn-sparkle-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+              <span>Generate</span>
+            </div>
+            <span class="btn-generate-sub">⚡ 1 Credit</span>
+          </button>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+
+</body>
+</html>

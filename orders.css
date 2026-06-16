@@ -1,0 +1,938 @@
+/* ==========================================================================
+   DESIGN SYSTEM & CUSTOM PROPERTIES
+   ========================================================================== */
+:root {
+  --primary-color: #5c4dff;        /* Vibrant Indigo/Purple */
+  --primary-hover: #4738e6;
+  --secondary-color: #2563eb;      /* Blue for badges and active states */
+  --accent-orange: #f97316;
+  --whatsapp-green: #25d366;       /* WhatsApp Official Green */
+  
+  /* Text Colors */
+  --text-primary: #111827;         /* Near black */
+  --text-secondary: #4b5563;       /* Slate grey */
+  --text-muted: #9ca3af;           /* Light grey */
+  --text-purple: #4f46e5;
+  
+  /* Backgrounds & Borders */
+  --bg-page: #f1f5f9;              /* Light blue-grey background for desktop body */
+  --bg-app: #ffffff;               /* Solid white app container */
+  --bg-support: #f5f3ff;           /* Light purple support card background */
+  --border-color: #e5e7eb;         /* Thin light grey border */
+  --border-light: #f3f4f6;
+  
+  /* Fonts */
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-premium: 0 20px 25px -5px rgba(92, 77, 255, 0.06), 0 10px 10px -5px rgba(92, 77, 255, 0.03);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   RESET & GLOBAL STYLES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 24px 12px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   APP CONTAINER (MOBILE-FIRST SHELL)
+   ========================================================================== */
+.app-container {
+  width: 100%;
+  max-width: 480px; /* iPhone 14 Pro Max / Mobile View Width */
+  background-color: var(--bg-app);
+  border-radius: 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   ICON & BUTTON UTILITIES
+   ========================================================================== */
+.svg-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.icon-button:hover {
+  background-color: var(--border-light);
+  transform: scale(1.05);
+}
+
+.icon-button:active {
+  transform: scale(0.95);
+}
+
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.location-selector {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.location-label-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+}
+
+.pin-icon {
+  color: var(--primary-color);
+  width: 14px;
+  height: 14px;
+}
+
+.caret-icon {
+  color: var(--text-secondary);
+  width: 12px;
+  height: 12px;
+}
+
+.location-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.whatsapp-btn {
+  color: var(--whatsapp-green);
+}
+
+.whatsapp-btn:hover {
+  background-color: #f0fdf4;
+}
+
+.notification-btn, .cart-btn {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 700;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid var(--bg-app);
+}
+
+.red-badge {
+  background-color: #ef4444;
+}
+
+.blue-badge {
+  background-color: var(--secondary-color);
+}
+
+/* ==========================================================================
+   SEARCH & FILTER BAR
+   ========================================================================== */
+.search-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.search-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0 14px;
+  height: 44px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-container:focus-within {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(92, 77, 255, 0.1);
+}
+
+.search-icon {
+  color: var(--text-muted);
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.filter-button {
+  background-color: #ffffff;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 12px;
+  padding: 0 16px;
+  height: 44px;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-button:hover {
+  background-color: var(--border-light);
+  border-color: var(--text-muted);
+}
+
+.filter-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   STATUS TABS
+   ========================================================================== */
+.status-tabs {
+  display: flex;
+  width: 100%;
+  border-bottom: 1.5px solid var(--border-light);
+  margin-top: 4px;
+}
+
+.tab-item {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 4px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+  border-bottom: 2.5px solid transparent;
+  margin-bottom: -1.5px; /* overlay active line border */
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.tab-item:hover {
+  color: var(--text-primary);
+}
+
+.tab-item.active {
+  color: var(--primary-color);
+  font-weight: 700;
+  border-bottom-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   ORDERS SECTIONS
+   ========================================================================== */
+.orders-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.view-all-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.view-all-link:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ==========================================================================
+   ACTIVE ORDER CARD (LARGE)
+   ========================================================================== */
+.order-card-large {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.order-card-large:hover {
+  border-color: rgba(92, 77, 255, 0.15);
+  box-shadow: var(--shadow-premium);
+}
+
+.card-main-info {
+  display: flex;
+  gap: 14px;
+  position: relative;
+}
+
+.order-image-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background-color: var(--border-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.order-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.order-details-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-badge-row {
+  display: flex;
+  margin-bottom: 2px;
+}
+
+.status-badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.status-badge.scheduled {
+  background-color: rgba(34, 197, 94, 0.08);
+  color: #15803d;
+}
+
+.status-badge.in-progress {
+  background-color: rgba(59, 130, 246, 0.08);
+  color: var(--secondary-color);
+}
+
+.title-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.order-item-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.order-price {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.order-id {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.metadata-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+.meta-icon {
+  width: 12px;
+  height: 12px;
+  color: var(--text-muted);
+}
+
+.meta-text {
+  line-height: 1.2;
+}
+
+.card-chevron-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  width: 16px;
+  cursor: pointer;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.order-card-large:hover .card-chevron-col {
+  color: var(--text-secondary);
+  transform: translateX(2px);
+}
+
+.chevron-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.card-action-row {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid var(--border-light);
+  padding-top: 10px;
+}
+
+.action-btn-outline {
+  background: none;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 700;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.action-btn-outline:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-0.5px);
+}
+
+.action-btn-outline:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* ==========================================================================
+   COMPACT ORDER CARD
+   ========================================================================== */
+.order-card-compact {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.order-card-compact:hover {
+  border-color: rgba(92, 77, 255, 0.15);
+  box-shadow: var(--shadow-premium);
+}
+
+.compact-image-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 10px;
+  background-color: var(--border-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.compact-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.compact-details-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.compact-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.compact-item-title {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.compact-price {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.compact-id {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.compact-meta-container {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 2px;
+  margin-top: 1px;
+}
+
+.compact-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.compact-meta-icon {
+  width: 10px;
+  height: 10px;
+  color: var(--text-muted);
+}
+
+.compact-footer-row {
+  display: flex;
+  margin-top: 2px;
+}
+
+.status-badge-inline {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.status-badge-inline.completed {
+  background-color: rgba(34, 197, 94, 0.08);
+  color: #15803d;
+}
+
+.compact-chevron-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  width: 16px;
+  cursor: pointer;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.order-card-compact:hover .compact-chevron-col {
+  color: var(--text-secondary);
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   VIEW ALL COMPLETED ORDERS BUTTON
+   ========================================================================== */
+.view-all-completed-btn-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.view-all-completed-btn-card:hover {
+  background-color: var(--border-light);
+  border-color: var(--text-muted);
+}
+
+.btn-card-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.download-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+}
+
+.btn-card-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.btn-chevron {
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   CANCELLED ORDERS SECTION
+   ========================================================================== */
+.cancelled-orders-header {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.cancelled-orders-header:hover {
+  background-color: var(--border-light);
+}
+
+.cancelled-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.expand-caret {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   SUPPORT BANNER
+   ========================================================================== */
+.support-banner {
+  background-color: var(--bg-support);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(92, 77, 255, 0.05);
+}
+
+.support-content-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.support-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(92, 77, 255, 0.1);
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.headset-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.support-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.support-headline {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.support-sub {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.support-actions-right {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.support-btn-whatsapp, .support-btn-call {
+  flex: 1;
+  height: 38px;
+  border-radius: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: var(--font-main);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.support-btn-whatsapp {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  color: var(--whatsapp-green);
+}
+
+.support-btn-whatsapp:hover {
+  background-color: #f0fdf4;
+  border-color: var(--whatsapp-green);
+  transform: translateY(-0.5px);
+}
+
+.btn-whatsapp-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.support-btn-call {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 8px rgba(92, 77, 255, 0.15);
+}
+
+.support-btn-call:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 6px 12px rgba(92, 77, 255, 0.25);
+  transform: translateY(-0.5px);
+}
+
+.support-btn-call:active {
+  transform: translateY(0);
+}
+
+.btn-call-icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* ==========================================================================
+   BOTTOM NAVIGATION BAR
+   ========================================================================== */
+.footer-spacer {
+  height: 64px; /* Matches the space consumed by the bottom nav */
+}
+
+.bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 6px 8px 12px 8px; /* Extra bottom padding for physical home indicator clearance style */
+  z-index: 100;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: var(--text-muted);
+  width: 64px;
+  transition: color var(--transition-fast);
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-fast);
+}
+
+.nav-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.nav-item:hover {
+  color: var(--text-secondary);
+}
+
+.nav-item.active {
+  color: var(--primary-color);
+}
+
+.nav-item.active .nav-icon {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (DESKTOP INTEGRATION)
+   ========================================================================== */
+/* On very small screens, remove padding outside the app shell to fit mobile screens perfectly */
+@media (max-width: 500px) {
+  body {
+    padding: 0;
+    background-color: #ffffff;
+  }
+  
+  .app-container {
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 16px 14px;
+  }
+  
+  .bottom-nav {
+    position: fixed;
+  }
+}
